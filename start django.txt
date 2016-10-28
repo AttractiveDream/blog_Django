@@ -1,0 +1,63 @@
+
+(C:\Anaconda3) C:\Users\69106>d:
+
+(C:\Anaconda3) D:\>cd D:\workspace\django
+
+(C:\Anaconda3) D:\workspace\django>python -m venv myvenv
+
+(C:\Anaconda3) D:\workspace\django>myvenv\Scripts\activate
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>pip install django
+Collecting django
+  Downloading Django-1.10.2-py2.py3-none-any.whl (6.8MB)
+    100% |################################| 6.8MB 126kB/s
+Installing collected packages: django
+Successfully installed django-1.10.2
+You are using pip version 8.1.1, however version 8.1.2 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>django-admin startproject mysite .
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+
+  
+(myvenv) (C:\Anaconda3) D:\workspace\django>python manage.py startapp blog
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>python manage.py makemigrations blog
+
+Migrations for 'blog':
+  blog\migrations\0001_initial.py:
+    - Create model Post
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>python manage.py migrate blog
+Operations to perform:
+  Apply all migrations: blog
+Running migrations:
+  Applying blog.0001_initial... OK
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>python manage.py createsuperuser
+Username (leave blank to use '69106'): admin
+Email address: admin@xxx.xxx
+Password:
+Password (again):
+Superuser created successfully.
+
+(myvenv) (C:\Anaconda3) D:\workspace\django>python manage.py runserver
+Performing system checks...
